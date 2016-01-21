@@ -9,7 +9,7 @@
 
 SET NOCOUNT ON;
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
-BEGIN    DECLARE @SchemaName sysname = 'laterooms'
+BEGIN    DECLARE @SchemaName sysname = 'dbo'
        ,@TableName sysname = 'user'
        ,@IndexID INT
        ,@PartitionNumber INT;	--@CompressionSavings for results    DECLARE @CompressionSavings TABLE
