@@ -1,6 +1,6 @@
 /*
     File: Backup Loop with Compression.sql
-    Desc: Checks @DatabaseName is currently in a mirror and the PRINCIPLE, failover executes after that.
+    Desc: Performs backups, will also figure out if compressed backups can be run based on edition ID. 
     Date: 21/01/2016
     
     Version Change          Date        Notes
