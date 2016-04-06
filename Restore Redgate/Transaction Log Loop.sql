@@ -1,6 +1,6 @@
 /*
     File: Transaction Log Loop.sql
-    Desc: Backups up the LOG where a log is required, TO NUL writes a file locally and discards it.
+    Desc: Finds all files of type (TL) and restores with no recovery until the last file is parsed. 
     Date: 21/01/2016
     
     Version Change          Date        Notes
