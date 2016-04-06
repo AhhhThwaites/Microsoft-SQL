@@ -6,6 +6,7 @@
     Version Change          Date        Notes
     1.0     Initial Commit  21/01/2016  none
 */
+
 SET NOCOUNT ON;
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
