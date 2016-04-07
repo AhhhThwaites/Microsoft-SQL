@@ -6,4 +6,6 @@ Scripts for various aspects of SQL administration and diagnostics
 <li>Compression</li>
 <li>Extended Events</li>
 <li>HA DR - High Availability/Disaster Recovery </li>
+<li>Restore Redgate </li>
+<li>Testing Scripts </li>
 
