@@ -12,8 +12,8 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
 BEGIN
 	DECLARE	@FileExt CHAR(6) = '.sqb'
-	   ,@DIR VARCHAR(100) = 'F:\Cleansed\TransactionLogs\'
-	   ,@Debug BIT = 0;
+	   ,@DIR VARCHAR(100) = 'F:\Cleansed\Laterooms_InvTesting\'
+	   ,@Debug BIT = 1;
 
 	SET NOCOUNT ON; 
 	
@@ -67,8 +67,8 @@ BEGIN
 	WHILE @iMin <= @iMax
 		BEGIN
 			SELECT	@CMD = CASE	WHEN [ID] = @iMax
-								THEN N'-SQL "RESTORE LOG [laterooms_inv] FROM DISK = ''F:\Cleansed\Laterooms_InvTesting\TL\' + [FileName] + ''' WITH RECOVERY"'
-								ELSE N'-SQL "RESTORE LOG [laterooms_inv] FROM DISK = ''F:\Cleansed\Laterooms_InvTesting\TL\' + [FileName]
+								THEN N'-SQL "RESTORE LOG [laterooms_inv] FROM DISK = '''+@DIR + [FileName] + ''' WITH RECOVERY"'
+								ELSE N'-SQL "RESTORE LOG [laterooms_inv] FROM DISK = '''+@DIR + [FileName]
 									 + ''' WITH NORECOVERY"'
 						   END
 			FROM	[#tmpCMDOutput]
