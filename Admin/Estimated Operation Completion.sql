@@ -1,5 +1,5 @@
 /*
-    File: Estimate Restore Completion.sql
+    File: Estimated Operation Completion.sql
     Desc: ESTIMATED query completion for backup/restore/shrink
     Date: 29/06/2016
     
