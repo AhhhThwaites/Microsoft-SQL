@@ -2,6 +2,7 @@
 Scripts for various aspects of SQL administration and diagnostics
 
 <h>Folder Descriptions</h>
+<li>Admin</li>
 <li>Backups</li>
 <li>Compression</li>
 <li>Extended Events</li>
