@@ -1,5 +1,5 @@
 /*
-    File: Active Query Information.sql
+    File: Requests - Active Sessions.sql
     Desc: Diagnostic real-time query information.
     Date: 29/06/2016
     
@@ -46,7 +46,7 @@ FROM    sys.dm_exec_requests AS R
 		LEFT JOIN sys.dm_exec_connections AS SDEC 
 			ON SDEC.session_id = S.session_id
         OUTER APPLY sys.dm_exec_sql_text(ISNULL(R.plan_handle, SDEC.most_recent_sql_handle)) AS T
-        OUTER APPLY sys.dm_exec_query_plan(plan_handle) AS DEQP
+        OUTER APPLY sys.dm_exec_query_plan(ISNULL(R.plan_handle, SDEC.most_recent_sql_handle)) AS DEQP
 WHERE   @@SPID <> R.session_id
         AND R.session_id >= 50
         AND S.program_name NOT LIKE 'DatabaseMail%'
