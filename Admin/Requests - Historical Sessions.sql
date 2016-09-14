@@ -5,6 +5,7 @@
     
     Version Change          Date        Notes
     1.0     Initial Commit  05/07/2016  none
+	1.1     Enhancement		14/09/2016  added XML sql_text.
 */
 
 SET NOCOUNT ON;
@@ -18,7 +19,12 @@ SELECT  EeC.session_id
        ,DB_NAME(ExS.database_id) AS DatabaseName
        ,Qt.text
        ,EeC.last_read
-       ,EeC.last_write
+       ,EeC.last_write,
+	   (SELECT	text AS [text()]
+		FOR
+		 XML PATH('')
+			,TYPE
+		) AS sql_text
 FROM    sys.dm_exec_connections AS EeC
         INNER JOIN sys.dm_exec_sessions AS ExS
             ON EeC.session_id = ExS.session_id
