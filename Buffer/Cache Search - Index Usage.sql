@@ -17,7 +17,7 @@ BEGIN
 
 	SET @SQL = 
 	'WITH XMLNAMESPACES (DEFAULT ''http://schemas.microsoft.com/sqlserver/2004/07/showplan'')
-	SELECT  TOP 10 DB_NAME(E.dbid) AS [DBName]
+	SELECT  DB_NAME(E.dbid) AS [DBName]
 		   ,OBJECT_NAME(E.objectid, dbid) AS [ObjectName]
 		   ,P.cacheobjtype AS [CacheObjType]
 		   ,P.objtype AS [ObjType]
